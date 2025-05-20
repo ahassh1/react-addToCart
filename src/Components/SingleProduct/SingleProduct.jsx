@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const SingleProduct = ({product,handleAddToCart}) => {
     // console.log(product)
     const{title,description,image}=product;
+
+    const [status,setStatus]= useState(false);
+
     const handleSelect=()=>{
       handleAddToCart(product)
+      setStatus(true)
     }
 
     return (
@@ -18,7 +22,7 @@ const SingleProduct = ({product,handleAddToCart}) => {
     <h2 className="card-title">{title}</h2>
     <p>{description.slice(0,80)}</p>
     <div className="card-actions justify-end">
-      <button onClick={handleSelect} className="btn btn-primary">Add to cart</button>
+      <button disabled={status} onClick={handleSelect} className="btn btn-primary">Add to cart</button>
     </div>
   </div>
 </div>
