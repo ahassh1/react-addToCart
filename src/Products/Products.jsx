@@ -11,7 +11,7 @@ const Products = ({handleAddToCart}) => {
     },[])
 
     return (
-        <div className='grid grid-cols-2 gap-8
+        <div className='grid grid-cols-3 gap-3
          border-sky-200 shadow-blue-200 shadow-2xl'>
          
              {

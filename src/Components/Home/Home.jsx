@@ -10,11 +10,13 @@ const Home = () => {
   const [selectedProducts,setSelectedProducts]=useState([])
 
   const handleAddToCart=(product)=>{
-     console.log(product)
+    //  console.log(product)
+    setSelectedProducts([...selectedProducts,product])
   }
+  // console.log(selectedProducts)
     return (
       <div className='w-9/10 m-auto'>
-         <Navbar></Navbar>
+         <Navbar selectedProducts={selectedProducts}></Navbar>
           <div className='p-8'>
               <Banner></Banner>
           </div>
@@ -24,7 +26,7 @@ const Home = () => {
                 <Products handleAddToCart={handleAddToCart}> </Products>
             </div>
             <div>
-                <Cart></Cart>
+                <Cart selectedProducts={selectedProducts}></Cart>
             </div>
           </div>
 

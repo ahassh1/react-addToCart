@@ -8,7 +8,7 @@ const SingleProduct = ({product,handleAddToCart}) => {
     }
 
     return (
-       <div className="card bg-base-100 w-96 shadow-sm">
+       <div className="card w-96 shadow-sm bg-green-200 border-2">
   <figure>
     <img className='w-35'
       src={image}
@@ -16,7 +16,7 @@ const SingleProduct = ({product,handleAddToCart}) => {
   </figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
-    <p>{description.slice(0,50)}</p>
+    <p>{description.slice(0,80)}</p>
     <div className="card-actions justify-end">
       <button onClick={handleSelect} className="btn btn-primary">Add to cart</button>
     </div>
