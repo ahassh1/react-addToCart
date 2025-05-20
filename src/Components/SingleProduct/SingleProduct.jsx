@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 const SingleProduct = ({product,handleAddToCart}) => {
     // console.log(product)
-    const{title,description,image}=product;
+    const{title,description,image,price}=product;
 
     const [status,setStatus]= useState(false);
 
     const handleSelect=()=>{
-      handleAddToCart(product)
+      handleAddToCart(product,price)
       setStatus(true)
     }
 
