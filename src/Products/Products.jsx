@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../Components/SingleProduct/SingleProduct';
 
-const Products = () => {
+const Products = ({handleAddToCart}) => {
      
     const [products,setproducts]=useState([]);
     useEffect(()=>{
@@ -11,10 +11,11 @@ const Products = () => {
     },[])
 
     return (
-        <div className='grid grid-cols-2 gap-8 border-sky-300 shadow-blue-300 shadow-2xl'>
+        <div className='grid grid-cols-2 gap-8
+         border-sky-200 shadow-blue-200 shadow-2xl'>
          
              {
-                products.map((p)=><SingleProduct product={p}></SingleProduct>)
+            products.map((p)=><SingleProduct handleAddToCart={handleAddToCart} product={p}></SingleProduct>)
              }
         </div>
             

@@ -1,8 +1,12 @@
 import React from 'react';
 
-const SingleProduct = ({product}) => {
+const SingleProduct = ({product,handleAddToCart}) => {
     // console.log(product)
-    const{title,description,category,image,id,price}=product
+    const{title,description,image}=product;
+    const handleSelect=()=>{
+      handleAddToCart(product)
+    }
+
     return (
        <div className="card bg-base-100 w-96 shadow-sm">
   <figure>
@@ -14,7 +18,7 @@ const SingleProduct = ({product}) => {
     <h2 className="card-title">{title}</h2>
     <p>{description.slice(0,50)}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Add to cart</button>
+      <button onClick={handleSelect} className="btn btn-primary">Add to cart</button>
     </div>
   </div>
 </div>
