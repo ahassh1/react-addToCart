@@ -16,8 +16,12 @@ const Home = () => {
     setSelectedProducts([...selectedProducts,product])
   }
   // console.log(selectedProducts)
+     const handleDelete=(id)=> {
+         const remainingProduct= selectedProducts.filter(p=>p.id !==id)
+         setSelectedProducts(remainingProduct)
+     }
     return (
-      <div className='w-9/10 m-auto'>
+      <div>
          <Navbar selectedProducts={selectedProducts}></Navbar>
           <div className='p-8'>
               <Banner></Banner>
@@ -28,11 +32,13 @@ const Home = () => {
                 <Products handleAddToCart={handleAddToCart}> </Products>
             </div>
             <div>
-                <Cart selectedProducts={selectedProducts} price={price}></Cart>
+                <Cart selectedProducts={selectedProducts} handleDelete={handleDelete} price={price}></Cart>
             </div>
           </div>
 
-       <Footer></Footer>
+         <div className='mt-15 py-15'>
+          <Footer></Footer>
+         </div>
       </div>
     );
 };
