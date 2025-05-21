@@ -16,9 +16,11 @@ const Home = () => {
     setSelectedProducts([...selectedProducts,product])
   }
   // console.log(selectedProducts)
-     const handleDelete=(id)=> {
+     const handleDelete=(id,productPrice)=> {
+      setPrice(price-productPrice)
          const remainingProduct= selectedProducts.filter(p=>p.id !==id)
          setSelectedProducts(remainingProduct)
+
      }
     return (
       <div>

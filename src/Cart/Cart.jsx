@@ -8,7 +8,7 @@ const Cart = ({selectedProducts,price,handleDelete}) => {
             selectedProducts.map((p)=> <div className='flex justify-around items-center gap-2 bg-gray-200 my-3 border-2 '>
                 <img className='w-15' src={p.image} alt="" />
                 <p>{p.title.slice(0,22)}</p>
-                <button onClick={()=>handleDelete(p.id)} className='btn bg-red-400'>Delete</button>
+                <button onClick={()=>handleDelete(p.id, p.price)} className='btn bg-red-400'>Delete</button>
             </div>)
         }
       </div>
